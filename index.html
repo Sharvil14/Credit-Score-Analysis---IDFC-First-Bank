@@ -1,16 +1,33 @@
-# Example code to create index.html
-html_content = """
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My First Site</title>
-    <link rel="stylesheet" href="styles.css">  <!-- Link to CSS -->
+    <title>Loan Default Predictor</title>
 </head>
 <body>
-    <h1>Welcome to My Website!</h1>
-    <p>This site was created using Python and hosted on GitHub Pages.</p>
+    <h1>Loan Default Prediction</h1>
+    <form id="predictionForm">
+        <label>Age:</label>
+        <input type="number" name="age" required><br>
+        <label>Income:</label>
+        <input type="number" name="income" required><br>
+        <label>Credit Score:</label>
+        <input type="number" name="credit_score" required><br>
+        <button type="submit">Predict</button>
+    </form>
+    <p id="result"></p>
+
+    <script>
+        // JavaScript to send data to Flask and show the result
+        document.getElementById('predictionForm').onsubmit = async (e) => {
+            e.preventDefault();
+            const response = await fetch('/predict', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(Object.fromEntries(new FormData(e.target)))
+            });
+            const result = await response.json();
+            document.getElementById('result').innerText = `Prediction: ${result.prediction}`;
+        };
+    </script>
 </body>
 </html>
-"""
-with open("index.html", "w") as file:
-    file.write(html_content)
