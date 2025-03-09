@@ -1,0 +1,16 @@
+# Example code to create index.html
+html_content = """
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My First Site</title>
+    <link rel="stylesheet" href="styles.css">  <!-- Link to CSS -->
+</head>
+<body>
+    <h1>Welcome to My Website!</h1>
+    <p>This site was created using Python and hosted on GitHub Pages.</p>
+</body>
+</html>
+"""
+with open("index.html", "w") as file:
+    file.write(html_content)
