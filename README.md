@@ -1,9 +1,8 @@
-# Credit-Score-Analysis---IDFC-First-Bank
 # Credit Card Behavior Score Analysis
 
 ## Project Overview
 
-This project aims to predict credit card behavior scores, such as the likelihood of default, using machine learning. Here, i utilized a dataset of credit card users and apply a series of data science techniques to build a robust predictive model. These techniques include data cleaning, feature engineering, feature selection, handling class imbalance, model training, and evaluation.
+This project aims to predict credit card behavior scores, such as the likelihood of default, using machine learning. Here, I utilized a dataset of credit card users and applied a series of data science techniques to build a robust predictive model. These techniques include data cleaning, feature engineering, feature selection, handling class imbalance, model training, and evaluation.
 
 ## Key Features
 
